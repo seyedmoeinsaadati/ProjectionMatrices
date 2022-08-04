@@ -131,7 +131,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3405689}
   - component: {fileID: 3405688}
-  - component: {fileID: 3405687}
   m_Layer: 0
   m_Name: NormalCamera
   m_TagString: Untagged
@@ -139,14 +138,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &3405687
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3405686}
-  m_Enabled: 1
 --- !u!20 &3405688
 Camera:
   m_ObjectHideFlags: 0
@@ -172,7 +163,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 100
-  field of view: 65.364136
+  field of view: 60
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -291,7 +282,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 92095349}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: 1.5, z: 0}
+  m_LocalPosition: {x: 0.69, y: 4.19, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 541413795}
@@ -447,7 +438,6 @@ GameObject:
   m_Component:
   - component: {fileID: 604976412}
   - component: {fileID: 604976414}
-  - component: {fileID: 604976413}
   - component: {fileID: 604976415}
   m_Layer: 0
   m_Name: WobbleCamera
@@ -470,14 +460,6 @@ Transform:
   m_Father: {fileID: 1817152956}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 18.737001, y: -27.502, z: 0}
---- !u!81 &604976413
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 604976411}
-  m_Enabled: 1
 --- !u!20 &604976414
 Camera:
   m_ObjectHideFlags: 0
@@ -915,7 +897,6 @@ GameObject:
   m_Component:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
-  - component: {fileID: 963194226}
   - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: OffCenterPorjectionCamera
@@ -924,14 +905,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &963194226
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
 --- !u!20 &963194227
 Camera:
   m_ObjectHideFlags: 0
@@ -956,7 +929,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 100
+  far clip plane: 1000
   field of view: 46.89062
   orthographic: 0
   orthographic size: 5
@@ -1005,6 +978,7 @@ MonoBehaviour:
   right: 0.5
   top: 0.5
   bottom: -0.5
+  factor: 45
 --- !u!1 &1034574853
 GameObject:
   m_ObjectHideFlags: 0
