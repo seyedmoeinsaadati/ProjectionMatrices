@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [ExecuteInEditMode]
-public class OffCenterProjection : MonoBehaviour
+public class VulkanCanonicalViewProjection : MonoBehaviour
 {
     public float left = -0.2F;
     public float right = 0.2F;
