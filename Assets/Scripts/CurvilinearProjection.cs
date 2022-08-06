@@ -6,7 +6,7 @@ public class CurvilinearProjection : MonoBehaviour
     public float right, bottom;
     public float radius = 1;
 
-    void LateUpdate()
+    private void LateUpdate()
     {
         Camera cam = GetComponent<Camera>();
         // Matrix4x4 m = CurvilinearMatrix(radius);
@@ -50,7 +50,7 @@ public class CurvilinearProjection : MonoBehaviour
         m[1, 3] = 0;
         m[2, 0] = 0;
         m[2, 1] = 0;
-        m[2, 2] = radius - far / (far - near);
+        m[2, 2] = (radius - far / (far - near));
         m[2, 3] = -far * near / (far - near);
         m[3, 0] = 0;
         m[3, 1] = 0;
