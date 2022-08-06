@@ -3,6 +3,7 @@
     Properties
     {
         _WorldRadius("World Radius", Float) = 1
+        _MainTex ("Texture", 2D) = "white" {}
     }
     SubShader
     {
@@ -32,12 +33,16 @@
                 float4 vertex : SV_POSITION;
             };
 
-            float _WorldRadius;
+            sampler2D _MainTex;
+            float4 _MainTex_ST;
 
+            float _WorldRadius;
+                    
             v2f vert (appdata v)
             {
                 v2f o;
-                 o.vertex = UnityObjectToClipPos(v.vertex);
+                o.vertex = UnityObjectToClipPos(v.vertex);
+                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
                 float d = distance(o.vertex, 0);
                 o.vertex.x = o.vertex.x * _WorldRadius / d;
                 o.vertex.y = o.vertex.y * _WorldRadius / d;
@@ -47,9 +52,11 @@
 
             fixed4 frag (v2f i) : SV_Target
             {
-                // sample the texture
-                // fixed4 col = tex2D(_MainTex, i.uv);
-                return 1;
+            // sample the texture
+                fixed4 col = tex2D(_MainTex, i.uv);
+            // apply fog
+                UNITY_APPLY_FOG(i.fogCoord, col);
+                return col;
             }
             ENDCG
         }
