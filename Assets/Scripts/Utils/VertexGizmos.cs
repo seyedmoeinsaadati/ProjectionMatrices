@@ -5,6 +5,7 @@ public class VertexGizmos : MonoBehaviour
 {
     public MeshFilter meshFilter;
     private Mesh mesh;
+    public float gizmosSize = 0.1f;
 
     private void OnDrawGizmos()
     {
@@ -13,7 +14,7 @@ public class VertexGizmos : MonoBehaviour
             Gizmos.color = Color.black;
             for (int i = 0; i < mesh.vertexCount; i++)
             {
-                Gizmos.DrawSphere(transform.TransformPoint(mesh.vertices[i]), .05f);
+                Gizmos.DrawSphere(transform.TransformPoint(mesh.vertices[i]), gizmosSize);
             }
         }
     }
