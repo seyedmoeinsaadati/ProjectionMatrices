@@ -44,10 +44,10 @@
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);
         
-                float d = distance(o.vertex, 0);
-                o.vertex.x = o.vertex.x * _WorldRadius / d;
-                o.vertex.y = o.vertex.y * _WorldRadius / d;
-                o.vertex.z = o.vertex.z * _WorldRadius / d;
+                float d = _WorldRadius / distance(o.vertex, 0);
+                o.vertex.x = o.vertex.x * d;
+                o.vertex.y = o.vertex.y * d;
+                o.vertex.z = o.vertex.z * d;
                 return o;
             }
 
