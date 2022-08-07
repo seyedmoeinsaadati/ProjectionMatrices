@@ -1,8 +1,10 @@
-﻿using UnityEngine;
+﻿using UnityEditor;
+using UnityEngine;
 
 public class StandardProjectionMatrix : MonoBehaviour
 {
-    public static Matrix4x4 Orthographic(float left, float right, float bottom, float top, float near, float far)
+    public static Matrix4x4 OrthographicProjection(float left, float right, float bottom, float top, float near,
+        float far)
     {
         Matrix4x4 m = new Matrix4x4();
         m[0, 0] = 2.0f / (right - left);
@@ -91,6 +93,25 @@ public class StandardProjectionMatrix : MonoBehaviour
         m[2, 2] = c;
         m[2, 3] = d;
         m[3, 2] = e;
+        return m;
+    }
+
+    #endregion
+
+    #region ReversePerspective
+
+    /// <param name="weight">percent of reverse perspective [0, 1]</param>
+    /// <param name="offset">distance from camera position</param>
+    public static Matrix4x4 ReversePerspectiveProjection(float verticalSize, float aspectRatio, float weight,
+        float offset = 0)
+    {
+        Matrix4x4 m = new Matrix4x4();
+        m.m00 = 1 / verticalSize * aspectRatio;
+        m.m11 = 1 / verticalSize;
+        m.m22 = 0.000001f;
+        m.m23 = weight;
+        m.m32 = weight;
+        m.m33 = 1.0f + offset * weight;
         return m;
     }
 
