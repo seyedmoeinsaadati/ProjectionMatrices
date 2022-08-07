@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [ExecuteInEditMode]
 public class VulkanCanonicalViewProjection : MonoBehaviour
@@ -14,9 +11,9 @@ public class VulkanCanonicalViewProjection : MonoBehaviour
 
     void LateUpdate()
     {
-        Camera cam = Camera.main;
-        //Matrix4x4 m = PerspectiveOffCenter(left, right, bottom, top, cam.nearClipPlane, cam.farClipPlane, Factor());
-        Matrix4x4 m = StandardProjectionMatrix.PerspectiveMatrix(cam.nearClipPlane, cam.farClipPlane);
+        Camera cam = GetComponent<Camera>();
+        Matrix4x4 m = PerspectiveOffCenter(left, right, bottom, top, cam.nearClipPlane, cam.farClipPlane, Factor());
+        // Matrix4x4 m = StandardProjectionMatrix.PerspectiveMatrix(cam.nearClipPlane, cam.farClipPlane);
         cam.projectionMatrix = m;
     }
 
