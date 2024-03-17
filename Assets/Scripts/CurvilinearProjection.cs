@@ -62,26 +62,26 @@ public class CurvilinearProjection : MonoBehaviour
         return m;
     }
 
-    // private static Matrix4x4 CurvilinearPerspectiveMatrix(float radius, float aspectRatio, float size, float weight,
-    //     float offset)
-    // {
-    //     Matrix4x4 m = new Matrix4x4();
-    //     m[0, 0] = 2 * radius / (aspectRatio * size);
-    //     m[0, 1] = 0;
-    //     m[0, 2] = 0;
-    //     m[0, 3] = 0;
-    //     m[1, 0] = 0;
-    //     m[1, 1] = 2 * radius / size;
-    //     m[1, 2] = 0;
-    //     m[1, 3] = 0;
-    //     m[2, 0] = 0;
-    //     m[2, 1] = 0;
-    //     m[2, 2] = .00001f;
-    //     m[2, 3] = radius * weight;
-    //     m[3, 0] = 0;
-    //     m[3, 1] = 0;
-    //     m[3, 2] = weight;
-    //     m[3, 3] = 2 * radius;
-    //     return m;
-    // }
+    private static Matrix4x4 CurvilinearPerspectiveMatrix(float radius, float aspectRatio, float size, float weight,
+        float offset)
+    {
+        Matrix4x4 m = new Matrix4x4();
+        m[0, 0] = 2 * radius / (aspectRatio * size);
+        m[0, 1] = 0;
+        m[0, 2] = 0;
+        m[0, 3] = 0;
+        m[1, 0] = 0;
+        m[1, 1] = 2 * radius / size;
+        m[1, 2] = 0;
+        m[1, 3] = 0;
+        m[2, 0] = 0;
+        m[2, 1] = 0;
+        m[2, 2] = .00001f;
+        m[2, 3] = radius * weight;
+        m[3, 0] = 0;
+        m[3, 1] = 0;
+        m[3, 2] = weight;
+        m[3, 3] = 2 * radius;
+        return m;
+    }
 }
